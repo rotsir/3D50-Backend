@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <header class="auth-header">
+      <a href="index.html" class="nav__logo auth-logo">
+        <span class="nav__logo-text">3D<span>50</span></span>
+      </a>
+      <h1 class="auth-title">Join 3D50</h1>
+      <p class="auth-subtitle">Create a free account to start downloading premium assets.</p>
+    </header>
+
+    <form class="auth-form" id="register-form">
+      <div class="form-group">
+        <label class="form-label" for="username">Username</label>
+        <input type="text" id="username" class="form-input" placeholder="creativestudio" required minlength="3">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email address</label>
+        <input type="email" id="email" class="form-input" placeholder="name@studio.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="Min. 8 characters" required minlength="8">
+        <p class="form-hint">Must include uppercase and a number.</p>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" id="terms" required>
+          <span class="text-xs text-muted">I agree to the <a href="#" class="auth-link">Terms and Conditions</a></span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg" id="register-submit">
+        <span class="btn-text">Create Account</span>
+        <span class="spinner"></span>
+      </button>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html" class="auth-link">Sign In</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="js/register.js"></script>
+</body>
+</html>

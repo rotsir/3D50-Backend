@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="page-body">
+
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="3D50 Home">
+        <span class="nav__logo-text">3D<span>50</span></span>
+      </a>
+
+      <div class="nav__search">
+        <div class="search-bar" id="nav-search-bar">
+          <span class="search-bar__icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            class="search-bar__input"
+            id="nav-search-input"
+            placeholder="Search 3D models, textures, sounds…"
+            autocomplete="off"
+          >
+          <div class="search-suggestions" id="nav-search-suggestions"></div>
+        </div>
+      </div>
+
+      <nav class="nav__links">
+        <a href="products.html" class="nav__link">Browse</a>
+        <a href="products.html?is_free=1" class="nav__link">Free</a>
+        <a href="products.html?sort=popular" class="nav__link">Trending</a>
+      </nav>
+
+      <div class="nav__cta" id="nav-cta">
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login">Log In</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register">Sign Up Free</a>
+      </div>
+
+      <div class="nav__user" id="nav-user" style="display:none;">
+        <a href="profile.html" class="btn btn-ghost btn-sm active" id="nav-dashboard">Dashboard</a>
+        <button class="btn btn-ghost btn-sm" id="nav-logout">Log Out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="dashboard-page">
+    <div class="container">
+      
+      <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+          <div class="dashboard-user-info">
+            <div class="user-avatar-large" id="sidebar-avatar">U</div>
+            <div class="user-meta-info">
+              <div class="font-weight-bold" id="sidebar-username">Username</div>
+              <div class="text-xs text-muted" id="sidebar-email">user@email.com</div>
+            </div>
+          </div>
+
+          <nav class="dashboard-nav">
+            <div class="dashboard-nav-item active" data-tab="overview">Account Overview</div>
+            <div class="dashboard-nav-item" data-tab="downloads">Download History</div>
+            <div class="dashboard-nav-item" data-tab="reviews">My Reviews</div>
+            <div class="dashboard-nav-item" data-tab="settings">Settings</div>
+            <div class="divider" style="margin:var(--space-2) 0;"></div>
+            <div class="dashboard-nav-item text-error" id="sidebar-logout">Logout</div>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="dashboard-main" id="dashboard-content">
+          
+          <!-- Overview Tab -->
+          <section class="dashboard-tab" id="tab-overview">
+            <h2 class="dashboard-section-title">Account Overview</h2>
+            
+            <div class="stats-grid">
+              <div class="stat-card animate-scale-in">
+                <span class="stat-val" id="stat-downloads">0</span>
+                <span class="stat-label">Downloads</span>
+              </div>
+              <div class="stat-card animate-scale-in" style="animation-delay:0.1s">
+                <span class="stat-val" id="stat-reviews">0</span>
+                <span class="stat-label">Reviews</span>
+              </div>
+              <div class="stat-card animate-scale-in" style="animation-delay:0.2s">
+                <span class="stat-val">Standard</span>
+                <span class="stat-label">License</span>
+              </div>
+            </div>
+
+            <div style="margin-top:var(--space-12);">
+              <h3 class="section-title" style="font-size:var(--text-lg);margin-bottom:var(--space-4);">Recent Activity</h3>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Action</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recent-activity-body">
+                    <!-- Activities -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Downloads Tab -->
+          <section class="dashboard-tab" id="tab-downloads" style="display:none;">
+            <h2 class="dashboard-section-title">Download History</h2>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Size</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="download-history-body">
+                  <!-- Downloads -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Reviews Tab -->
+          <section class="dashboard-tab" id="tab-reviews" style="display:none;">
+            <h2 class="dashboard-section-title">My Reviews</h2>
+            <div class="reviews-list" id="my-reviews-list">
+              <!-- My Reviews -->
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo">
+            <span class="nav__logo-text">3D<span>50</span></span>
+          </a>
+          <p class="footer__tagline">The world's largest marketplace for high-quality 3D assets, models, and textures.</p>
+        </div>
+        <div>
+          <div class="footer__heading">Marketplace</div>
+          <div class="footer__links">
+            <a href="products.html" class="footer__link">Browse All</a>
+            <a href="products.html?is_free=1" class="footer__link">Free Assets</a>
+            <a href="products.html?sort=popular" class="footer__link">Trending</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading">Account</div>
+          <div class="footer__links">
+            <a href="login.html" class="footer__link">Log In</a>
+            <a href="register.html" class="footer__link">Sign Up</a>
+            <a href="profile.html" class="footer__link active">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 3D50 Marketplace. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

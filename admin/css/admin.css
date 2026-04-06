@@ -1,0 +1,134 @@
+/**
+ * admin.css — Admin Panel styles
+ * Overrides and extensions for the management interface.
+ */
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: var(--color-bg-base);
+}
+
+.admin-sidebar {
+  background: var(--color-bg-card);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.admin-nav-link:hover, .admin-nav-link.active {
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+}
+
+.admin-content {
+  padding: var(--space-10) var(--space-12);
+  max-width: 1400px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+}
+
+.admin-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-extrabold);
+  margin-top: var(--space-2);
+}
+
+/* ── Admin Specific Cards ── */
+.admin-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+/* ── DataTable Overrides ── */
+.admin-table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+}
+
+.admin-search {
+  flex: 1;
+  max-width: 400px;
+}
+
+.admin-status-badge {
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.status--published { background: var(--color-success-bg); color: var(--color-success); }
+.status--draft     { background: var(--color-accent-bg); color: var(--color-accent); }
+.status--hidden    { background: var(--color-text-muted); color: var(--color-bg-card); }
+
+/* ── Modal Customizations for Forms ── */
+.admin-modal .modal {
+  max-width: 800px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.image-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.image-preview-item {
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.image-preview-item img { width: 100%; height: 100%; object-fit: cover; }
+.image-preview-remove {
+  position: absolute; top: 4px; right: 4px;
+  background: rgba(0,0,0,0.5); color: white; border-radius: 50%;
+  width: 20px; height: 20px; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 12px;
+}

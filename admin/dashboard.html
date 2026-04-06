@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="../frontend/css/variables.css">
+  <link rel="stylesheet" href="../frontend/css/reset.css">
+  <link rel="stylesheet" href="../frontend/css/components.css">
+  <link rel="stylesheet" href="../frontend/css/layout.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="nav__logo" style="padding-left:var(--space-4);">
+      <a href="dashboard.html" class="nav__logo-text">3D<span>50</span> Admin</a>
+    </div>
+
+    <nav class="admin-nav">
+      <a href="dashboard.html" class="admin-nav-link active">Dashboard Overview</a>
+      <a href="products.html" class="admin-nav-link">Product Inventory</a>
+      <a href="users.html" class="admin-nav-link">User Management</a>
+      <a href="reviews.html" class="admin-nav-link">Review Moderation</a>
+      <a href="discounts.html" class="admin-nav-link">Discount Schedules</a>
+      <div class="divider" style="margin:var(--space-4) 0;"></div>
+      <a href="../frontend/dashboard.html" class="admin-nav-link">← Website Home</a>
+      <a href="../frontend/dashboard.html" class="admin-nav-link text-error" id="admin-logout">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-content">
+    <header class="admin-header">
+      <div>
+        <div class="section-label">Central Control</div>
+        <h1 class="admin-title">Marketplace Statistics</h1>
+      </div>
+      <div id="admin-user-pfp" class="review-card__avatar">A</div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-val" id="stat-total-products">0</span>
+        <span class="stat-label">Total Products</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val" id="stat-total-users">0</span>
+        <span class="stat-label">Registered Users</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val" id="stat-total-downloads">0</span>
+        <span class="stat-label">Total Downloads</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val" id="stat-total-revenue">$0.00</span>
+        <span class="stat-label">Lifetime Revenue</span>
+      </div>
+    </div>
+
+    <div class="admin-card" style="margin-top:var(--space-10);">
+      <h3 class="section-title" style="font-size:var(--text-lg);margin-bottom:var(--space-4);">Recent Sales Activity</h3>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User</th>
+              <th>Product</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="recent-activity-body">
+            <!-- stats fetched via dashboard.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="../frontend/js/auth.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

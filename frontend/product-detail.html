@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body class="page-body">
+
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="3D50 Home">
+        <span class="nav__logo-text">3D<span>50</span></span>
+      </a>
+
+      <div class="nav__search">
+        <div class="search-bar" id="nav-search-bar">
+          <span class="search-bar__icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            class="search-bar__input"
+            id="nav-search-input"
+            placeholder="Search 3D models, textures, sounds…"
+            autocomplete="off"
+          >
+          <div class="search-suggestions" id="nav-search-suggestions"></div>
+        </div>
+      </div>
+
+      <nav class="nav__links">
+        <a href="products.html" class="nav__link">Browse</a>
+        <a href="products.html?is_free=1" class="nav__link">Free</a>
+        <a href="products.html?sort=popular" class="nav__link">Trending</a>
+      </nav>
+
+      <div class="nav__cta" id="nav-cta">
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login">Log In</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register">Sign Up Free</a>
+      </div>
+
+      <div class="nav__user" id="nav-user" style="display:none;">
+        <a href="profile.html" class="btn btn-ghost btn-sm" id="nav-dashboard">Dashboard</a>
+        <button class="btn btn-ghost btn-sm" id="nav-logout">Log Out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="product-detail">
+    <div class="container">
+      
+      <!-- Loading State -->
+      <div id="product-loading">
+        <div class="skeleton" style="height:400px;border-radius:var(--radius-2xl);"></div>
+      </div>
+
+      <!-- Content State -->
+      <div id="product-content" style="display:none;">
+        
+        <header class="section-header" style="margin-bottom:var(--space-8);">
+          <div>
+            <nav class="breadcrumb" style="font-size:var(--text-xs);margin-bottom:var(--space-2);color:var(--color-text-muted);">
+              <a href="products.html">Marketplace</a> / 
+              <span id="product-breadcrumb-cat">Category</span>
+            </nav>
+            <h1 class="section-title" id="product-title">Product Title</h1>
+          </div>
+        </header>
+
+        <div class="product-grid">
+          
+          <!-- Left Content -->
+          <div class="product-left">
+            <div class="product-gallery">
+              <div class="product-gallery__main">
+                <img id="main-image" src="" alt="Main product image">
+              </div>
+              <div class="product-gallery__thumbs" id="thumb-list">
+                <!-- Thumbs -->
+              </div>
+            </div>
+
+            <div class="product-content">
+              <div class="product-description" id="product-description">
+                <!-- Description -->
+              </div>
+              
+              <div class="product-tags" id="product-tags">
+                <!-- Tags -->
+              </div>
+              
+              <section class="reviews-section">
+                <div class="reviews-header">
+                  <h2 class="section-title" style="font-size:var(--text-xl);">Customer Reviews</h2>
+                  <button class="btn btn-secondary btn-sm" id="post-review-trigger">Write a Review</button>
+                </div>
+                <div class="reviews-list" id="reviews-list">
+                  <!-- Reviews -->
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <aside class="product-sidebar">
+            <div class="product-buy-card">
+              <div class="product-price-row">
+                <span class="product-price-val" id="product-price">$0.00</span>
+                <span id="product-discount-badge"></span>
+              </div>
+              
+              <div class="product-info-grid">
+                <div class="product-info-item">
+                  <span class="product-info-label">Format</span>
+                  <span class="product-info-value" id="product-format">OBJ, FBX</span>
+                </div>
+                <div class="product-info-item">
+                  <span class="product-info-label">Size</span>
+                  <span class="product-info-value" id="product-size">45 MB</span>
+                </div>
+                <div class="product-info-item">
+                  <span class="product-info-label">License</span>
+                  <span class="product-info-value">Standard Royalty Free</span>
+                </div>
+                <div class="product-info-item">
+                  <span class="product-info-label">Downloads</span>
+                  <span class="product-info-value" id="product-downloads">0</span>
+                </div>
+              </div>
+
+              <div class="divider" style="margin:var(--space-2) 0;"></div>
+              
+              <button class="btn btn-primary btn-lg btn-full" id="download-btn">
+                <span class="btn-text">Download Now</span>
+                <span class="spinner"></span>
+              </button>
+              
+              <p class="text-xs text-muted text-center">Instant access to files after processing.</p>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-section">
+              <div class="section-label" style="margin-bottom:var(--space-4);">You might also like</div>
+              <div class="related-list" id="related-list" style="display:flex;flex-direction:column;gap:var(--space-4);">
+                <!-- Related -->
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Review Modal -->
+  <div class="modal-overlay" id="review-modal">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title">Write a Review</h2>
+        <button class="modal__close">×</button>
+      </div>
+      <div class="modal__body">
+        <form id="review-form" class="form-group">
+          <label class="form-label">Rating</label>
+          <div class="star-input" id="star-input">
+            <input type="radio" name="rating" value="5" id="s5"><label for="s5">★</label>
+            <input type="radio" name="rating" value="4" id="s4"><label for="s4">★</label>
+            <input type="radio" name="rating" value="3" id="s3"><label for="s3">★</label>
+            <input type="radio" name="rating" value="2" id="s2"><label for="s2">★</label>
+            <input type="radio" name="rating" value="1" id="s1"><label for="s1">★</label>
+          </div>
+          
+          <label class="form-label" for="review-title">Review Title</label>
+          <input type="text" id="review-title" class="form-input" placeholder="Summarize your experience" required>
+          
+          <label class="form-label" for="review-body">Review Body</label>
+          <textarea id="review-body" class="form-textarea" placeholder="What did you think of this asset?" required></textarea>
+          
+          <div class="modal__footer">
+            <button type="button" class="btn btn-secondary modal__close">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="submit-review">Publish Review</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo">
+            <span class="nav__logo-text">3D<span>50</span></span>
+          </a>
+          <p class="footer__tagline">The world's largest marketplace for high-quality 3D assets, models, and textures.</p>
+        </div>
+        <div>
+          <div class="footer__heading">Marketplace</div>
+          <div class="footer__links">
+            <a href="products.html" class="footer__link">Browse All</a>
+            <a href="products.html?is_free=1" class="footer__link">Free Assets</a>
+            <a href="products.html?sort=popular" class="footer__link">Trending</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading">Account</div>
+          <div class="footer__links">
+            <a href="login.html" class="footer__link">Log In</a>
+            <a href="register.html" class="footer__link">Sign Up</a>
+            <a href="profile.html" class="footer__link">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 3D50 Marketplace. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Products — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body class="page-body">
+
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="3D50 Home">
+        <span class="nav__logo-text">3D<span>50</span></span>
+      </a>
+
+      <div class="nav__search">
+        <div class="search-bar" id="nav-search-bar">
+          <span class="search-bar__icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            class="search-bar__input"
+            id="nav-search-input"
+            placeholder="Search 3D models, textures, sounds…"
+            autocomplete="off"
+          >
+          <div class="search-suggestions" id="nav-search-suggestions"></div>
+        </div>
+      </div>
+
+      <nav class="nav__links">
+        <a href="products.html" class="nav__link active">Browse</a>
+        <a href="products.html?is_free=1" class="nav__link">Free</a>
+        <a href="products.html?sort=popular" class="nav__link">Trending</a>
+      </nav>
+
+      <div class="nav__cta" id="nav-cta">
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login">Log In</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register">Sign Up Free</a>
+      </div>
+
+      <div class="nav__user" id="nav-user" style="display:none;">
+        <a href="profile.html" class="btn btn-ghost btn-sm" id="nav-dashboard">Dashboard</a>
+        <button class="btn btn-ghost btn-sm" id="nav-logout">Log Out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="products-page">
+    <div class="container container-wide">
+      
+      <header class="section-header">
+        <div>
+          <div class="section-label" id="browse-label">Marketplace</div>
+          <h1 class="section-title" id="browse-title">Browse Assets</h1>
+        </div>
+      </header>
+
+      <div class="products-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="filter-sidebar">
+          <section class="filter-section">
+            <h2 class="filter-section__title">Categories</h2>
+            <div class="filter-list" id="category-filters">
+              <!-- JS-rendered -->
+            </div>
+          </section>
+
+          <section class="filter-section">
+            <h2 class="filter-section__title">Price Range</h2>
+            <div class="filter-price-range">
+              <input type="number" id="price-min" class="filter-price-input" placeholder="Min" min="0">
+              <span class="text-muted">–</span>
+              <input type="number" id="price-max" class="filter-price-input" placeholder="Max" min="0">
+            </div>
+            <div class="filter-list" style="margin-top:var(--space-4);">
+               <label class="filter-item">
+                 <input type="checkbox" id="filter-free">
+                 <span>Free Assets Only</span>
+               </label>
+            </div>
+          </section>
+
+          <section class="filter-section">
+            <h2 class="filter-section__title">Sort By</h2>
+            <div class="filter-list">
+              <label class="filter-item"><input type="radio" name="sort" value="newest" checked> <span>Newest Arrivals</span></label>
+              <label class="filter-item"><input type="radio" name="sort" value="popular"> <span>Most Popular</span></label>
+              <label class="filter-item"><input type="radio" name="sort" value="price_asc"> <span>Price: Low to High</span></label>
+              <label class="filter-item"><input type="radio" name="sort" value="price_desc"> <span>Price: High to Low</span></label>
+              <label class="filter-item"><input type="radio" name="sort" value="rating"> <span>Top Rated</span></label>
+            </div>
+          </section>
+
+          <button class="btn btn-secondary btn-full" id="clear-filters">Clear Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="products-main">
+          
+          <div class="products-controls">
+            <div class="products-count" id="results-count">Showing 0 results</div>
+            <div class="products-sort">
+              <span>View:</span>
+              <select id="limit-select">
+                <option value="12">12 per page</option>
+                <option value="24" selected>24 per page</option>
+                <option value="48">48 per page</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="products-grid" id="products-grid">
+            <!-- Skeletons go here initially -->
+          </div>
+
+          <div class="pagination" id="pagination-controls" style="margin-top:var(--space-12);">
+            <!-- Pagination items -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo">
+            <span class="nav__logo-text">3D<span>50</span></span>
+          </a>
+          <p class="footer__tagline">The world's largest marketplace for high-quality 3D assets, models, and textures.</p>
+        </div>
+        <div>
+          <div class="footer__heading">Marketplace</div>
+          <div class="footer__links">
+            <a href="products.html" class="footer__link">Browse All</a>
+            <a href="products.html?is_free=1" class="footer__link">Free Assets</a>
+            <a href="products.html?sort=popular" class="footer__link">Trending</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading">Account</div>
+          <div class="footer__links">
+            <a href="login.html" class="footer__link">Log In</a>
+            <a href="register.html" class="footer__link">Sign Up</a>
+            <a href="profile.html" class="footer__link">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 3D50 Marketplace. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

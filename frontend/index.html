@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D50 — Premium Digital Product Marketplace</title>
+  <meta name="description" content="Discover thousands of premium 3D models, textures, HDRIs, sound effects, and digital assets. Download instantly.">
+  <meta name="keywords" content="3D models, digital assets, textures, HDRI, game assets, VFX, download">
+  <meta property="og:title" content="3D50 — Premium Digital Product Marketplace">
+  <meta property="og:description" content="Download thousands of premium digital assets for games, film, and design.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="page-body">
+
+  <!-- ── Navigation ─────────────────────────── -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="3D50 Home">
+        <span class="nav__logo-text">3D<span>50</span></span>
+      </a>
+
+      <div class="nav__search">
+        <div class="search-bar" id="nav-search-bar">
+          <span class="search-bar__icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            class="search-bar__input"
+            id="nav-search-input"
+            placeholder="Search 3D models, textures, sounds…"
+            autocomplete="off"
+            aria-label="Search products"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+          >
+          <div class="search-suggestions" id="nav-search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+        </div>
+      </div>
+
+      <nav class="nav__links" aria-label="Site links">
+        <a href="products.html" class="nav__link">Browse</a>
+        <a href="products.html?is_free=1" class="nav__link">Free</a>
+        <a href="products.html?sort=popular" class="nav__link">Trending</a>
+      </nav>
+
+      <div class="nav__cta" id="nav-cta">
+        <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login">Log In</a>
+        <a href="register.html" class="btn btn-primary btn-sm" id="nav-register">Sign Up Free</a>
+      </div>
+
+      <!-- Shown when logged in -->
+      <div class="nav__user" id="nav-user" style="display:none;">
+        <a href="profile.html" class="btn btn-ghost btn-sm" id="nav-dashboard">Dashboard</a>
+        <button class="btn btn-ghost btn-sm" id="nav-logout">Log Out</button>
+      </div>
+
+      <button class="nav__burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
+    <div class="nav__mobile-links">
+      <a href="products.html" class="nav__mobile-link">Browse All</a>
+      <a href="products.html?is_free=1" class="nav__mobile-link">Free Assets</a>
+      <a href="products.html?sort=popular" class="nav__mobile-link">Trending</a>
+    </div>
+    <div style="display:flex;gap:var(--space-3);">
+      <a href="login.html" class="btn btn-secondary btn-sm btn-full">Log In</a>
+      <a href="register.html" class="btn btn-primary btn-sm btn-full">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ── Hero Section ──────────────────────── -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__grid-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__label animate-fade-in-up">New arrivals every week →</div>
+          <h1 class="hero__title animate-fade-in-up stagger-1">
+            Premium Digital Assets<br>for <span class="hero__title-accent">Creators</span>
+          </h1>
+          <p class="hero__subtitle animate-fade-in-up stagger-2">
+            Browse 50,000+ curated 3D models, textures, HDRIs, sound effects, and tools
+            trusted by game studios, filmmakers, and designers worldwide.
+          </p>
+          <div class="hero__search animate-fade-in-up stagger-3">
+            <div class="search-bar hero__search-bar" id="hero-search-bar">
+              <span class="search-bar__icon">⌕</span>
+              <input
+                type="search"
+                class="search-bar__input"
+                id="hero-search-input"
+                placeholder="Search for 3D models, HDRIs, brushes…"
+                autocomplete="off"
+                aria-label="Search products"
+              >
+              <button class="btn btn-primary hero__search-btn" id="hero-search-btn">Search</button>
+              <div class="search-suggestions" id="hero-search-suggestions"></div>
+            </div>
+          </div>
+          <div class="hero__stats animate-fade-in-up stagger-4">
+            <div class="hero__stat"><span class="hero__stat-value" id="stat-products">50K+</span><span class="hero__stat-label">Products</span></div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat"><span class="hero__stat-value">100%</span><span class="hero__stat-label">Royalty-Free</span></div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat"><span class="hero__stat-value">Instant</span><span class="hero__stat-label">Downloads</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Categories Grid ───────────────────── -->
+    <section class="section" id="categories-section" aria-label="Categories">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Explore by type</div>
+            <h2 class="section-title">Browse Categories</h2>
+          </div>
+        </div>
+        <div class="categories-grid" id="categories-grid" aria-label="Product categories">
+          <!-- Loaded by JS -->
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+          <div class="skeleton category-card"><div class="skeleton skeleton-text-xl" style="height:40px;width:40px;border-radius:50%"></div><div class="skeleton skeleton-text-md"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Featured Products ─────────────────── -->
+    <section class="section" id="featured-section" aria-label="Featured products">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Hand-picked</div>
+            <h2 class="section-title">Featured Products</h2>
+          </div>
+          <a href="products.html?sort=featured" class="section-link">View all →</a>
+        </div>
+        <div class="products-grid" id="featured-grid" aria-label="Featured products grid">
+          <!-- JS-rendered product cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Trending Products ──────────────────── -->
+    <section class="section" id="trending-section" aria-label="Trending products">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Most downloaded</div>
+            <h2 class="section-title">Trending Now</h2>
+          </div>
+          <a href="products.html?sort=popular" class="section-link">View all →</a>
+        </div>
+        <div class="products-grid" id="trending-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── Discounted Products ─────────────────── -->
+    <section class="section" id="sale-section" aria-label="Products on sale">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Limited time</div>
+            <h2 class="section-title">On Sale Now <span class="badge badge-red" style="vertical-align:middle;font-size:var(--text-sm);">SALE</span></h2>
+          </div>
+          <a href="products.html?has_discount=1" class="section-link">View all →</a>
+        </div>
+        <div class="products-grid" id="discounted-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── Latest Products ────────────────────── -->
+    <section class="section" id="latest-section" aria-label="Latest products">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Just added</div>
+            <h2 class="section-title">Latest Drops</h2>
+          </div>
+          <a href="products.html?sort=newest" class="section-link">View all →</a>
+        </div>
+        <div class="products-grid" id="latest-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ───────────────────────── -->
+    <section class="section testimonials-section" id="testimonials" aria-label="Customer testimonials">
+      <div class="container">
+        <div class="section-header" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
+          <div class="section-label">Trusted by creators</div>
+          <h2 class="section-title">What Creators Say</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card animate-fade-in-up">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"3D50 has become my go-to for production-ready assets. The quality is consistently AAA and the download system is instant."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">A</div>
+              <div><div class="testimonial-card__name">Alex Carter</div><div class="testimonial-card__role">Game Developer</div></div>
+            </div>
+          </article>
+          <article class="testimonial-card animate-fade-in-up stagger-2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"Found the perfect cyberpunk vehicle for my film project here. The LODs are perfect and the PBR workflow was seamless."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:var(--color-info)">S</div>
+              <div><div class="testimonial-card__name">Sam Rivera</div><div class="testimonial-card__role">VFX Artist</div></div>
+            </div>
+          </article>
+          <article class="testimonial-card animate-fade-in-up stagger-3">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"I've cut my pipeline time by 40% sourcing assets here instead of building from scratch. Incredible value for studios of any size."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:var(--color-success)">M</div>
+              <div><div class="testimonial-card__name">Maya Chen</div><div class="testimonial-card__role">Art Director</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Newsletter ──────────────────────────── -->
+    <section class="section" id="newsletter" aria-label="Newsletter signup">
+      <div class="container">
+        <div class="newsletter">
+          <div class="section-label">Stay updated</div>
+          <h2 class="newsletter__title">Get New Assets in Your Inbox</h2>
+          <p class="newsletter__subtitle">Weekly drops, exclusive free assets, and early access. No spam, ever.</p>
+          <form class="newsletter__form" id="newsletter-form" novalidate>
+            <input type="email" class="newsletter__input" id="newsletter-email" placeholder="yourname@studio.com" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="nav__logo-text" aria-label="3D50 logo">3D<span>50</span></span>
+          <p class="footer__brand-desc">The premium marketplace for digital creators. 50,000+ assets, instant downloads, royalty-free licensing.</p>
+        </div>
+        <div>
+          <div class="footer__heading">Marketplace</div>
+          <div class="footer__links">
+            <a href="products.html" class="footer__link">Browse All</a>
+            <a href="products.html?is_free=1" class="footer__link">Free Assets</a>
+            <a href="products.html?sort=popular" class="footer__link">Trending</a>
+            <a href="products.html?sort=newest" class="footer__link">New Arrivals</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading">Account</div>
+          <div class="footer__links">
+            <a href="login.html" class="footer__link">Log In</a>
+            <a href="register.html" class="footer__link">Sign Up</a>
+            <a href="profile.html" class="footer__link">Dashboard</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__heading">Company</div>
+          <div class="footer__links">
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">License</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 3D50.com — All rights reserved</p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container" role="alert" aria-live="polite"></div>
+
+  <!-- JS Modules -->
+  <script type="module" src="js/toast.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

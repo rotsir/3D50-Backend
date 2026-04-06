@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Users — 3D50 Admin</title>
+  <link rel="stylesheet" href../frontend/css/variables.css"><link rel="stylesheet" href../frontend/css/reset.css"><link rel="stylesheet" href../frontend/css/components.css"><link rel="stylesheet" href../frontend/css/layout.css"><link rel="stylesheet" hrefcss/admin.css">
+</head>
+<body class="admin-layout">
+  <aside class="admin-sidebar">
+    <a href="/" class="nav__logo-text">3D<span>50</span> Admin</a>
+    <nav class="admin-nav">
+      <a href="/adm../frontend/dashboard.html" class="admin-nav-link">Dashboard Overview</a>
+      <a href="/admin/products.html" class="admin-nav-link">Product Inventory</a>
+      <a href="/admin/users.html" class="admin-nav-link active">User Management</a>
+      <a href="/admin/reviews.html" class="admin-nav-link">Review Moderation</a>
+      <a href="/admin/discounts.html" class="admin-nav-link">Discount Schedules</a>
+      <div class="divider" style="margin:var(--space-4) 0;"></div>
+      <a href="/" class="admin-nav-link">← Website Home</a>
+      <a href../frontend/dashboard.html" class="admin-nav-link text-error" id="admin-logout">Logout</a>
+    </nav>
+  </aside>
+  <main class="admin-content">
+    <header class="admin-header">
+      <div><div class="section-label">User Base</div><h1 class="admin-title">Customer Management</h1></div>
+    </header>
+    <div class="admin-card">
+      <div class="admin-table-controls">
+        <input type="text" id="user-search" class="form-input admin-search" placeholder="Search by username or email...">
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Action</th></tr></thead>
+          <tbody id="user-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script type="module" srcjs/users.js"></script>
+</body>
+</html>
+<!-- Slide Slide Slide (Review Moderation) -->
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Review Moderation — 3D50 Admin</title>
+  <link rel="stylesheet" href../frontend/css/variables.css"><link rel="stylesheet" href../frontend/css/reset.css"><link rel="stylesheet" href../frontend/css/components.css"><link rel="stylesheet" href../frontend/css/layout.css"><link rel="stylesheet" hrefcss/admin.css">
+</head>
+<body class="admin-layout">
+  <aside class="admin-sidebar">
+    <a href="/" class="nav__logo-text">3D<span>50</span> Admin</a>
+    <nav class="admin-nav">
+      <a href="/adm../frontend/dashboard.html" class="admin-nav-link">Dashboard Overview</a>
+      <a href="/admin/products.html" class="admin-nav-link">Product Inventory</a>
+      <a href="/admin/users.html" class="admin-nav-link">User Management</a>
+      <a href="/admin/reviews.html" class="admin-nav-link active">Review Moderation</a>
+      <a href="/admin/discounts.html" class="admin-nav-link">Discount Schedules</a>
+      <div class="divider" style="margin:var(--space-4) 0;"></div>
+      <a href="/" class="admin-nav-link">← Website Home</a>
+      <a href../frontend/dashboard.html" class="admin-nav-link text-error" id="admin-logout">Logout</a>
+    </nav>
+  </aside>
+  <main class="admin-content">
+    <header class="admin-header">
+      <div><div class="section-label">Social Truth</div><h1 class="admin-title">Review Moderation</h1></div>
+    </header>
+    <div class="admin-card">
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Product</th><th>User</th><th>Rating</th><th>Title/Body</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="review-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script type="module" srcjs/reviews.js"></script>
+</body>
+</html>

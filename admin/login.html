@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — 3D50 Marketplace</title>
+  <link rel="stylesheet" href="../frontend/css/variables.css">
+  <link rel="stylesheet" href="../frontend/css/reset.css">
+  <link rel="stylesheet" href="../frontend/css/components.css">
+  <link rel="stylesheet" href="../frontend/css/layout.css">
+  <link rel="stylesheet" href="../css/pages/auth.css">
+</head>
+<body class="auth-page admin-auth">
+
+  <div class="auth-card">
+    <header class="auth-header">
+      <a href="../frontend/dashboard.html" class="nav__logo auth-logo">
+        <span class="nav__logo-text">3D<span>50</span> Admin</span>
+      </a>
+      <h1 class="auth-title">Admin Access</h1>
+      <p class="auth-subtitle">Restricted area. Please sign in with authorized credentials.</p>
+    </header>
+
+    <form class="auth-form" id="admin-login-form">
+      <div class="form-group">
+        <label class="form-label" for="email">Admin Email</label>
+        <input type="email" id="email" class="form-input" placeholder="admin@3d50.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-submit">
+        <span class="btn-text">Authorise & Access</span>
+        <span class="spinner"></span>
+      </button>
+
+      <div class="auth-footer">
+        <a href="../frontend/dashboard.html" class="auth-link">← Return to Website</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

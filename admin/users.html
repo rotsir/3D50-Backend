@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Users — 3D50 Admin</title>
+  <link rel="stylesheet" href="../frontend/css/variables.css"><link rel="stylesheet" href="../frontend/css/reset.css"><link rel="stylesheet" href="../frontend/css/components.css"><link rel="stylesheet" href="../frontend/css/layout.css"><link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="nav__logo" style="padding-left:var(--space-4);">
+      <a href="../frontend/dashboard.html" class="nav__logo-text">3D<span>50</span> Admin</a>
+    </div>
+    <nav class="admin-nav">
+      <a href="dashboard.html" class="admin-nav-link">Dashboard Overview</a>
+      <a href="products.html" class="admin-nav-link">Product Inventory</a>
+      <a href="users.html" class="admin-nav-link active">User Management</a>
+      <a href="reviews.html" class="admin-nav-link">Review Moderation</a>
+      <a href="discounts.html" class="admin-nav-link">Discount Schedules</a>
+      <div class="divider" style="margin:var(--space-4) 0;"></div>
+      <a href="../frontend/dashboard.html" class="admin-nav-link">← Website Home</a>
+      <a href="../frontend/dashboard.html" class="admin-nav-link text-error" id="admin-logout">Logout</a>
+    </nav>
+  </aside>
+  <main class="admin-content">
+    <header class="admin-header">
+      <div><div class="section-label">User Base</div><h1 class="admin-title">Customer Management</h1></div>
+    </header>
+    <div class="admin-card">
+      <div class="admin-table-controls">
+        <input type="text" id="user-search" class="form-input admin-search" placeholder="Search by username or email...">
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Action</th></tr></thead>
+          <tbody id="user-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../frontend/js/auth.js"></script>
+  <script type="module" src="js/users.js"></script>
+</body>
+</html>
